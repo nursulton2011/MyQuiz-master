@@ -9,7 +9,9 @@ export const Step = () => {
 
   // Функция для обработки переходов по шагам
   const handleStepClick = (step) => {
-    navigate(`/step/${step}`);
+    if (step <= activeStep) { // Переход только на пройденные шаги
+      navigate(`/step/${step}`);
+    }
   };
 
   return (

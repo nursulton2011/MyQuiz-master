@@ -1,3 +1,47 @@
 .indicator{
     margin-top: 50px;
 }
+.indicator {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 388px;
+}
+
+.indicator__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.indicator__progressbar {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    align-items: center;
+    /* Убедитесь, что все элементы выровнены по вертикали */
+}
+
+.indicator__unit {
+    height: 8px;
+    flex: 1 1 25%;
+    border: 1px solid #aeb4c2;
+    border-radius: 161px;
+    background-color: #d3d3d3;
+    /* Серая база для незаполненных единиц */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    /* Плавные переходы */
+}
+
+.indicator__unit._active {
+    background-color: #ffeb80;
+    /* Цвет для активного шага */
+    border: 0;
+}
+
+.indicator__unit._current {
+    background-color: #fff;
+    border: 2px solid #ffeb80;
+}
