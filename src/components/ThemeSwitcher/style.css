@@ -1,0 +1,54 @@
+/* Основной стиль для кастомного переключателя */
+.custom-switch {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    position: relative;
+  }
+  
+  /* Стиль для фона переключателя (светлая тема) */
+  .custom-switch .react-switch-bg {
+    background-color: #b39ddb;  /* Светлый фиолетовый */
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Стиль для фона при включенной (темной) теме */
+  .custom-switch.react-switch-checked .react-switch-bg {
+    background-color: #673ab7;  /* Темный фиолетовый */
+  }
+  
+  /* Стиль для ползунка */
+  .custom-switch .react-switch-handle {
+    background-color: #fff;  /* Белый ползунок */
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Стили для ползунка при включении (перемещение вправо) */
+  .custom-switch.react-switch-checked .react-switch-handle {
+    background-color: #d1c4e9;  /* Светлый фиолетовый для ползунка */
+    transform: translateX(30px);  /* Сдвигаем ползунок вправо */
+  }
+  
+  /* Текстовые метки на фоне переключателя */
+  .custom-switch .react-switch-bg:before {
+    content: "Светлая";  /* Текст для светлой темы */
+    font-size: 12px;
+    color: #3e3e3e;
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    transition: left 0.3s ease;
+  }
+  
+  /* Когда переключатель включен (темная тема) */
+  .custom-switch.react-switch-checked .react-switch-bg:before {
+    content: "Тёмная";  /* Текст для темной темы */
+    left: auto;
+    right: 8px;  /* Перемещаем текст для темной темы */
+  }
+  
